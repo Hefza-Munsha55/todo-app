@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rewards - TaskFlow</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+  <a href="index.html" class="logo">Task<span>Flow</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="tasks.html">My Tasks</a></li>
+    <li><a href="features.html">Features</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="reward.html" class="active">Reward</a></li>
+  </ul>
+</nav>
+
+<div class="reward-header">
+  <h1 class="reward-animate">Rewards</h1>
+  <p>Your hard work pays off! 💰</p>
+</div>
+
+<div class="reward-card">
+  <div class="wallet-big" id="wallet-display">💰 0 Rs</div>
+  
+  <div class="stats">
+    <div class="stat-box">
+      <span>Completed Tasks</span>
+      <strong id="total-completed">0</strong>
+    </div>
+    <div class="stat-box">
+      <span>Total Earned</span>
+      <strong id="total-earned">0 Rs</strong>
+    </div>
+  </div>
+
+  <h3>History</h3>
+  <div id="reward-history">
+    <p class="empty-text">No rewards yet.</p>
+  </div>
+
+  <button class="btn-primary" onclick="window.location.href='tasks.html'">Back to Tasks</button>
+</div>
+
+<script src="reward.js"></script>
+<footer>© 2026 TaskFlow - Week 4 Project</footer>
+</body>
+</html>

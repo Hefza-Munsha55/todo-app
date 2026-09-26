@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - TaskFlow</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html" class="logo">Task<span>Flow</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="tasks.html">My Tasks</a></li>
+    <li><a href="features.html">Features</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+    <li><a href="reward.html">Reward</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <div class="contact-header">
+    <h2>Contact Us</h2>
+    <p>Have a question? We'd love to hear from you.</p>
+  </div>
+
+  <form class="contact-form" onsubmit="alert('Message Sent!'); return false;">
+    <div class="input-group">
+      <input type="text" id="name" placeholder=" " required>
+      <label for="name">Name</label>
+
+    </div>
+    <div class="input-group">
+     
+      <input type="email" id="email" placeholder=" " required>
+        <label for="email">Email</label>
+    </div>
+    <div class="input-group">
+       
+      <textarea rows="5" placeholder=" " id="msg" required></textarea>
+      <label for="msg">Message</label>
+    </div>
+    <button type="submit" class="btn-primary btn-contact">Send Message</button>
+  </form>
+</div>
+
+<footer>© 2026 TaskFlow</footer>
+</body>
+</html>

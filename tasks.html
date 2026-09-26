@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Tasks - TaskFlow</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html" class="logo">TaskFlow</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="tasks.html" class="active">My Tasks</a></li>
+    <li><a href="features.html">Features</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+     <li><a href="Reward.html">Reward</a></li>
+  </ul>
+  
+</nav>
+
+<div class="container">
+  <h2>My Tasks</h2>
+  <form id="task-form" class="task-form">
+    <div class="form-field full">
+    <label class="task-label" for="task-input">Task Title</label>
+    <input type="text" id="task-input" placeholder="Enter task..." required class="task-input-main"></div>
+    
+<div class="form-field full">
+    <label class="task-label" for="description-input">Task Description</label>
+    <input type="text" id="description-input" placeholder="Enter task description..."  class="task-input-main"></div>
+
+
+    <div class="form-field">
+      <label class="task-label" for="task-mood">Task Mood</label>
+    <select id="task-mood" class="task-ampm-select">
+      <option>Task-mood</option>
+  <option>🔥 Energetic</option>
+  <option>😴 Tired</option>
+  <option>😠 Angry</option>
+</select></div>
+<div class="form-field">
+   <label class="task-label" for="task-time">Time</label>
+    <input type="time" id="task-time" class="task-time-input"></div>
+<div class="form-field">
+     <label class="task-label" for="task-ampm">AM / PM</label>
+    <select id="task-ampm" class="task-ampm-select">
+      <option value="AM">AM</option>
+      <option value="PM">PM</option>
+    </select></div>
+    <div class="form-field">
+       <label class="task-label" for="task-date">Task Date</label>
+    <input type="date" id="task-date" class="task-date-input">
+    </div>
+    <button type="submit" class="btn-primary">Add Task</button>
+    <button id="enable-sound" type="button" clas
+    s="btn-sound">🔊 Enable Alarm Sound</button>
+    <span id="error-msg" class="error-msg"></span>
+    
+  </form>
+
+  <div class="filter-group">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="active">Active</button>
+    <button class="filter-btn" data-filter="completed">Completed</button>
+  </div>
+
+  <ul id="task-list" class="task-list"></ul>
+  <p id="task-count" class="task-count"></p>
+</div>
+
+<!-- Alarm Modal -->
+<div id="alarm-modal" class="alarm-modal">
+  <div class="alarm-box">
+    <h3>🔒 FOCUS LOCK</h3>
+    <p id="alarm-text"></p>
+    <p style="font-size:12px; color: #2d6e2d; margin-top:6px;">Please complete your Task First! </p>
+    <button id="record-btn" class="btn-primary" style="margin-top:12px;">🎤 I Did It - Record 3 Sec</button>
+    <button id="stop-alarm-btn" class="stop-btn">Force Unlock</button>
+  </div>
+</div>
+<footer>© 2026 TaskFlow</footer>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - TaskFlow</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="logo">Task<span>Flow</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="tasks.html">My Tasks</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="faq.html" class="active">FAQ</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="reward.html">Reward</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h2>Frequently Asked Questions</h2><br>
+
+    <div class="faq-item">
+      <div class="faq-question">Is my data saved? <span>+</span></div>
+      <div class="faq-answer">Yes! All tasks are saved in your browser's localStorage. Even after refresh or closing the
+        tab, your tasks will remain.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Do I need internet? <span>+</span></div>
+      <div class="faq-answer">No, this is a 100% offline Vanilla JS app. It works without internet after first load.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Is it built with React? <span>+</span></div>
+      <div class="faq-answer">No, this project is built with pure Vanilla JavaScript as per Week 4 requirements. No
+        framework used.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Can I edit a task? <span>+</span></div>
+      <div class="faq-answer">Yes, click on Edit button. The task will come back to the input field where you can update
+        it.</div>
+    </div>
+  </div>
+
+  <footer>© 2026 TaskFlow</footer>
+  <script>
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        q.parentElement.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+
+</html>

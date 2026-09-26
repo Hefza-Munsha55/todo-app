@@ -1,0 +1,801 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap');
+
+:root{
+  --paper: #fffbf5;
+  --card: #ffffff;
+  --ink: #1a1a1a;
+  --muted: #8b8680;
+  --line: #ede9e3;
+  --zest: #ff5c35;
+  --zest-light:#fff0eb;
+  --mint:#2e2a68;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+body{background:var(--paper);min-height:100vh; padding-top: 75px !important; display:flex;flex-direction:column;color:var(--ink);-webkit-font-smoothing:antialiased}
+
+/* NAVBAR - Editorial 
+.navbar{
+  max-width:1200px;width:94%;margin:18px auto;
+  background:var(--card);border:1px solid var(--line);
+  border-radius:16px;padding:12px 20px;
+  display:flex;justify-content:space-between;align-items:center;
+  position: fixed;top: 0; left:0; bottom: ; width: 100%; z-index: 9999;
+  box-shadow:0 4px 24px rgba(0,0,0,0.5);
+}
+.logo{font-weight:800;font-size:20px;letter-spacing:-0.5px;text-decoration:none;color:var(--ink)}
+.logo span{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:var(--zest)}
+.nav-links{list-style:none;display:flex;gap:2px;align-items:center; background: none !important; background-color: transparent;}
+.nav-links a{
+  text-decoration:none; color: var(--muted);font-size:13.5px;font-weight:500;
+  padding:8px 14px;border-radius:100px;transition:all .2s ease;
+  background: none;
+  background-color: transparent;
+}
+.nav-links a:hover{color:var(--ink);background:#F3F2EF}
+.nav-links a.active{background:var(--ink);color:#fff}
+
+/* HERO - Index 
+.hero{max-width:900px;margin:0 auto;text-align:center;padding:110px 24px 80px}
+.hero h1{
+  font-family:'Instrument Serif',serif;font-size:72px;line-height:.95;letter-spacing:-2px;
+  font-weight:400;color:var(--ink);
+}
+.hero h1::after{content:'';display:block;width:60px;height:4px;background:var(--zest);margin:24px auto 0;border-radius:100px}
+.hero p{margin:28px auto 0;color:var(--muted);font-size:18px;line-height:1.6;max-width:520px}
+.hero .btn-primary{margin-top:32px;display:inline-block}
+
+/* CONTAINER 
+.container{
+  width:94%;max-width:860px;margin:24px auto;
+  background:var(--card);border:1px solid var(--line);
+  border-radius:20px;padding:36px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.03);
+}
+.container h2{font-size:28px;font-weight:800;letter-spacing:-0.8px;}
+
+/* BUTTONS 
+.btn-primary,.btn-contact{
+  background:var(--ink);color:#fff;border:none;
+  padding:13px 22px;border-radius:100px;font-weight:600;font-size:14px;
+  cursor:pointer;transition:.2s;
+}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(0,0,0,0.15)}
+.btn-contact{width:100%;background:var(--zest)}
+.btn-contact:hover{background:#E84610}
+
+/* TASKS - Pro Form + Alarm Must 
+.task-form{
+  display:grid;grid-template-columns:1fr 110px 80px 150px;
+  gap:10px;margin-top:18px;padding:14px;
+  background:#FBFAF8;border:1px solid var(--line);border-radius:16px;
+}
+.task-input-main{
+  grid-column:1 / -1;padding:14px 16px;border-radius:12px;
+  border:1px solid var(--line);background:#fff;outline:none;font-size:15px;
+}
+.task-input-main:focus{border-color:var(--ink);box-shadow:0 0 0 3px #EEE}
+.task-time-input,.task-date-input,.task-ampm-select{
+  padding:11px 10px;border-radius:10px;border:1px solid var(--line);background:#fff;
+  color: black;
+  font-size:13px;font-weight:500;outline:none;
+}
+
+.btn-sound{
+  grid-column:1 / -1;border:1px dashed #FFC4B0;background:var(--zest-light);
+  color:var(--zest);padding:10px;border-radius:10px;font-weight:600;font-size:12.5px;cursor:pointer;
+}
+.error-msg{grid-column:1 / -1;color:#EF4444;font-size:12px}
+.filter-group{display:flex;gap:8px;margin:22px 0 16px}
+.filter-btn{padding:7px 16px;border-radius:100px;border:1px solid var(--line);background: #fff;color:var(--muted);font-size:13px;font-weight:500;cursor:pointer}
+.filter-btn.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.task-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.task-item{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 16px;background:#fff;border:1px solid var(--line);border-radius:14px;transition:.2s;
+}
+.task-item:hover{border-color:var(--ink)}
+.task-time-badge{
+  background:var(--ink);color:#fff;padding:4px 10px;border-radius:100px;
+  font-size:11px;font-weight:600;margin-left:8px;
+}
+.task-time-badge.has-alarm::before{content:"🔔 "}
+.task-item.ringing{border-color:var(--zest)!important;background:var(--zest-light)!important;animation:ringShake .4s infinite}
+.task-count{margin-top:14px;color:var(--muted);font-size:13px;text-align:center}
+
+/* CONTACT 
+.contact-header h2{font-family:'Instrument Serif',serif;font-size:42px;font-weight:400;letter-spacing:-1px; color: #f5f5f0;}
+.contact-header p{color: #fff;margin:8px 0 24px}
+.contact-form{background:#2a2e33;border:1px solid var(--line);padding:20px;border-radius:16px;max-width:520px}
+.input-group{margin-bottom:14px}
+.input-group input,.input-group textarea{
+  width:100%;padding:13px 15px;border-radius:12px;border:1px solid yellow;background:#121417; outline:none;font-size:14px;
+}
+.input-group input:focus,.input-group textarea:focus{border-color:var(--ink)}
+
+/* FEATURES 
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:22px}
+.feature-card{background: #050507;border:1px solid yellowgreen;border-radius:16px;padding:20px;transition:.2s}
+.feature-card:hover{background: rgba(255,255,255,0.08);border-color:var(--ink);transform:translateY(-2px)}
+.feature-icon{width:36px;height:36px;background:var(--ink);color:#fff;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:14px;margin-bottom:12px}
+.feature-card:nth-child(2) .feature-icon{background:var(--zest)}
+.feature-card h3{font-size:15px;margin-bottom:6px}
+.feature-card p{font-size:13.5px;color:var(--muted);line-height:1.5}
+
+/* FAQ 
+.faq-item{border:1px solid var(--line);border-radius:14px;margin-bottom:10px;background:#FBFAF8;overflow:hidden;transition:.2s}
+.faq-item.active{background:#fff;border-color:var(--ink)}
+.faq-question{padding:16px 18px;display:flex;justify-content:space-between;font-weight:600;font-size:14px;cursor:pointer}
+.faq-question span{color:var(--zest);transition:.2s}
+.faq-item.active .faq-question span{transform:rotate(45deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:.3s;padding:0 18px;color:var(--muted);font-size:14px;line-height:1.6}
+.faq-item.active .faq-answer{max-height:200px;padding:0 18px 16px}
+
+/* ABOUT 
+.about-badge{display:inline-block;background:var(--ink);color:#fff;padding:6px 12px;border-radius:100px;font-size:10px;font-weight:700;letter-spacing:.5px;margin-bottom:14px}
+.about-heading{font-family:'Instrument Serif',serif;font-size:38px;line-height:1.1;letter-spacing:-1px}
+.about-desc{color:var(--muted);margin:14px 0 20px;line-height:1.7;font-size:15px}
+.about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0;padding:18px;background:#FBFAF8;border:1px solid var(--line);border-radius:16px;text-align:center}
+.stat-item h3{font-size:22px;font-weight:800}
+.stat-item p{font-size:12px;color:var(--muted);margin-top:2px}
+.tech-stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.tech-tag{padding:7px 12px;background:#fff;border:1px solid var(--line);border-radius:100px;font-size:12px;font-weight:500}
+.about-footer-note{margin-top:20px;color:var(--muted);font-size:12px}
+
+/* ALARM MODAL - Sound Beep 
+.alarm-modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(17,17,17,0.35);backdrop-filter:blur(10px);align-items:center;justify-content:center}
+.alarm-modal.show{display:flex}
+.alarm-box{background:#fff;padding:28px;border-radius:18px;text-align:center;max-width:340px;width:90%;box-shadow:0 20px 60px rgba(0,0,0,0.2)}
+.stop-btn{margin-top:16px;width:100%;padding:12px;background:var(--zest);color:#fff;border:none;border-radius:12px;font-weight:600;cursor:pointer}
+
+footer{margin-top:auto;text-align:center;padding:30px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:40px}
+@keyframes ringShake{0%,100%{transform:translateX(0)}25%{transform:translateX(-2px)}75%{transform:translateX(2px)}}
+@media(max-width:700px){.hero h1{font-size:42px}.task-form{grid-template-columns:1fr 1fr}.navbar{border-radius:14px}.container{padding:22px}}*/
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap');
+
+:root{
+  --paper: #f5f3ef;      /* No.1 Indigo Clean - Background */
+  --card: #FFFFFF;
+  --ink: #0F2e2b;
+  --muted: #12372a;
+  --line: #dde8e2;
+  --zest: #0f3d3a;       /* Primary - Indigo */
+  --zest-light: #b9f8cf;
+  --zest-hover: #12372a;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+body{background:var(--paper);min-height:100vh; display:flex;flex-direction:column;color:var(--ink);-webkit-font-smoothing:antialiased}
+
+/* NAVBAR - FIXED & NEAT - My Tasks katna band */
+.navbar{
+   position:-webkit-sticky;
+   border-top: 4px solid #2d6;
+   margin: 0px;
+   top: 8px;
+   left: 12px;
+   right: 12px;
+   padding: 12px  16px;
+   justify-content: space-between;
+   align-items: center;
+   width: auto;
+   display: inline-block;
+   z-index: 99999;
+}
+.logo{font-weight:800;font-size:20px;letter-spacing:-0.5px;text-decoration:none;color:var(--ink)}
+.logo span{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:var(--zest)}
+.nav-links{list-style:none;display:flex;gap:8px;align-items:center; background: transparent !important; margin: 0; flex-wrap: wrap !important;}
+body{
+  padding-top: 70px !important;
+}
+.nav-links a{
+  text-decoration:none; color: black;font-size:13.5px;font-weight:600;
+  padding:8px 8px;border-radius:100px;transition:all .5s ease;
+  white-space: nowrap !important;
+  display: inline-flex;
+  border: 2px solid green;
+  background: #2d6a;
+}
+.nav-links a:hover{color:var(--ink);background:var(--zest-light)}
+.nav-links a.active{background:var(--ink);color:#fff}
+
+
+/* HERO - Index */
+.hero{max-width:900px;margin:0 auto;text-align:center;padding:80px 24px 60px}
+.hero h1{
+  font-family:'Instrument Serif',serif;font-size:72px;line-height:.95;letter-spacing:-2px;
+  font-weight:400;color:var(--ink);
+}
+.hero h1::after{content:'';display:block;width:60px;height:4px;background:var(--zest);margin:24px auto 0;border-radius:100px}
+.hero p{margin:28px auto 0;color: darkgreen;font-size:18px;line-height:1.6;max-width:520px}
+.hero .btn-primary{margin-top:32px;display:inline-block}
+.hero .btn-primary:hover{
+  color:var(--ink);background:var(--zest-light);
+  border: 2px solid #2d6a;
+
+}
+
+
+/* CONTAINER */
+.container{
+  width:94%;max-width:860px;margin:24px auto;
+  background: var(--card); border:1px solid var(--line);
+  border-radius:20px;padding:36px;
+  box-shadow:0 10px 40px rgba(15,23,42,0.04);
+}
+.container h2{font-size:28px;font-weight:800;letter-spacing:-0.8px;}
+
+/* BUTTONS */
+.btn-primary,.btn-contact{
+  background: #1a4d2e; color:#fff;border: 2px solid darkgreen;
+  padding:13px 22px;border-radius:100px;font-weight:600;font-size:14px;
+  cursor:pointer;transition:.2s;
+}
+.btn-primary:hover{transform:translateY(-1px);box-shadow: 0 8px 30px rgba(#2d6a,#b9f8cf)}
+.btn-contact{width:100%;background: var(--zest);}
+.btn-contact:hover{ 
+transform: translateY(-5px);
+transition: transform 0.25s ease, box-shadow 0.25 ease; background:#2d6a; color:#12372a}
+
+/* TASKS 
+.task-form{
+  display:grid;grid-template-columns:1fr 110px 80px 150px;
+  gap:10px;margin-top:18px;padding:14px;
+  background:var(--paper);border:1px solid var(--line);border-radius:16px;
+}
+.task-input-main{
+  grid-column:1 / -1;padding:14px 16px;border-radius:12px;
+  border:1px solid var(--line);background:#fff;outline:none;font-size:15px;
+}
+.task-input-main:focus{border-color:var(--zest);box-shadow:0 0 0 3px var(--zest-light)}
+.task-time-input,.task-date-input,.task-ampm-select{
+  padding:11px 10px;border-radius:10px;border:1px solid var(--line);background:#fff;
+  color: var(--ink);
+  font-size:13px;font-weight:500;outline:none;
+}
+.btn-sound{
+  grid-column:1 / -1;border:1px dashed var(--line);background:var(--zest-light);
+  color:var(--zest);padding:10px;border-radius:10px;font-weight:600;font-size:12.5px;cursor:pointer;
+}
+.error-msg{grid-column:1 / -1;color:#EF4444;font-size:12px}
+.filter-group{display:flex;gap:8px;margin:22px 0 16px}
+.filter-btn{padding:7px 16px;border-radius:100px;border:1px solid var(--line);background: #fff;color:var(--muted);font-size:13px;font-weight:500;cursor:pointer}
+.filter-btn.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.task-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.task-item{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 16px;background:#fff;border:1px solid var(--line);border-radius:14px;transition:.2s;
+}
+.task-item:hover{border-color:var(--ink)}
+.task-time-badge{
+  background:var(--ink);color:#fff;padding:4px 10px;border-radius:100px;
+  font-size:11px;font-weight:600;margin-left:8px;
+}
+.task-time-badge.has-alarm::before{content:"🔔 "}
+.task-item.ringing{border-color:var(--zest)!important;background:var(--zest-light)!important;animation:ringShake .4s infinite}
+.task-count{margin-top:14px;color:var(--muted);font-size:13px;text-align:center}
+*/
+
+/*new code*/
+
+/* ===== MY TASKS - NEAT FIX ===== */
+.container{
+  width:94%; max-width:900px; margin:24px auto;
+  background:#fff; border:1px solid #E2E8F0;
+  border-radius:20px; padding:28px;
+  box-shadow:0 10px 40px rgba(15,23,42,0.05);
+}
+.container h2{font-size:26px; font-weight:800; letter-spacing:-0.5px; margin-bottom:18px;}
+
+/* Form ko clean 2-column banaya */
+.task-form{
+  display:grid;
+  grid-template-columns: 1fr 1fr; /* 2 barabar hisse */
+  gap:12px;
+  padding:18px;
+  background:#e8f8e0;
+  border:1px solid #b8f8e0;
+  border-radius:16px;
+}
+.task-input-main{
+  grid-column: 1 / -1; /* Enter task... poori line pe */
+  padding:14px 16px;
+  border-radius:12px;
+  border:1px solid #a0e0b0;
+  background:#fff; font-size:15px;
+  outline:none;
+}
+.task-input-main:focus{border-color:#a0e0b0; box-shadow:0 0 0 2px darkgreen}
+
+/* Saare chote inputs neat */
+.task-time-input, .task-date-input, .task-ampm-select,
+.task-form select{
+  width:100%;
+  padding:12px 12px;
+  border-radius:12px;
+  border:1px solid #a0e0b0;
+  background:#fff;
+  font-size:13.5px;
+  font-weight:500;
+}
+
+/* Add Task button full width aur neat 
+.task-form .btn-primary, .task-form button[type="submit"], .task-form .btn-contact{
+  grid-column: 1 / -1;
+  width: auto;
+align-items: center;
+  background: #2d6e2d;;
+  color:#fff;
+  border:none;
+  padding:13px;
+  border-radius: 100px;
+  font-weight:600;
+  cursor:pointer;
+}
+.task-form .btn-primary:hover{background:#2d6; color: black; border: 2px solid darkgreen;}
+
+/* Enable Alarm Sound 
+.btn-sound{
+  grid-column: 1 / -1;
+  border:1px dashed #2d6;
+  background:#2d6e2d;
+  color: white;
+  padding:12px;
+  border-radius:10px;
+  font-weight: 600; font-size:12.5px;
+  text-align:center;
+  width: auto;
+  min-width: 0px;
+  max-width: 180px;
+  align-items: center !important;
+}
+.btn-sound:hover{
+  background: #2d6;
+  color: black;
+  border: 2px dashed darkgreen;
+}
+*/
+/* Tasks list neeche */
+
+
+.form-field{display:flex; flex-direction:column; gap:6px;}
+.form-field.full{grid-column:1 / -1;
+
+}
+
+.task-label{
+  font-size:12px;
+  font-weight:600;
+  color:var(--ink);
+  letter-spacing:0.2px;
+  margin-left:4px;
+  text-transform: uppercase;
+}
+.filter-group{display: block; gap: 8px; margin:22px 0 14px; background: #d8f8e0; border: 2px solid darkgreen; border-radius: 12px;}
+.filter-btn{padding:7px 16px; 
+  margin: 5px;
+  border-radius:10px; border:1px solid darkgreen; background: #2d6e; color: black; font-size:13px; cursor:pointer}
+.filter-btn.active{background:#2d6e2d; color:#fff; border:2px solid #2d6;}
+
+.task-list{list-style:none; display:flex; flex-direction:column; gap:10px}
+.task-item{
+  display:flex; justify-content:space-between; align-items:center;
+  padding:14px 16px; background: #d8f8e0; color: darkgreen;
+  border: 2px solid darkgreen; border-radius:12px;
+  gap:12px;
+}
+.task-item div:last-child{display:flex; gap:8px; white-space:nowrap;}
+
+/* CONTACT - FIXED (yellow border khatam) 
+.contact-header h2{font-family:'Instrument Serif',serif;font-size:42px;font-weight:400;letter-spacing:-1px; color: var(--ink);}
+.contact-header p{color: var(--muted);margin:8px 0 24px}
+.contact-form{background:var(--card);border:1px solid var(--line);padding:20px;border-radius:16px;max-width:520px;box-shadow:0 10px 30px rgba(0,0,0,0.04)}
+.input-group{margin-bottom:14px}
+.input-group input,.input-group textarea{
+  width:100%;padding:13px 15px;border-radius:12px;border:1px solid var(--line);background:#fff; outline:none;font-size:14px; color:var(--ink);
+}
+.input-group label{
+  position: relative;
+  top: 10px;
+  
+  left: 16px;
+
+}
+.input-group input:focus,.input-group textarea:focus{border-color:var(--zest);box-shadow:0 0 0 3px var(--zest-light)}*/
+
+
+/*  final contact   */
+
+.contact-header h2{
+  font-family:'Instrument Serif',serif;
+  font-size:42px;
+  font-weight:400;
+  letter-spacing:-1px; 
+  color: var(--ink);
+}
+.contact-header p{
+  color: var(--muted);
+  margin:8px 0 24px;
+  font-size: 15px;
+}
+
+.contact-form{
+  background: #d8f8e0; /* #FFFEFB */
+  border:1px solid var(--line); /* #D6E8D9 */
+  padding:28px;
+  border-radius:16px;
+  max-width:520px;
+  box-shadow:0 10px 30px rgba(15, 61, 58, 0.06);
+
+}
+
+.input-group{
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-group input,
+.input-group textarea{
+  width:100%;
+  padding:15px 16px;
+  border-radius:12px;
+  border:1.5px solid #1d4;
+  background:#fff; 
+  outline:none;
+  font-size:14px; 
+  color:var(--ink);
+  transition: all 0.2s ease;
+}
+
+.input-group label{
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  background: var(--card);
+  padding: 0 8px;
+  font-size: 14px;
+  color: var(--zest);
+  pointer-events: none;
+  transition: all 0.25s ease;
+  border-radius: 4px;
+}
+
+/* Jb click karo to label uper uthega */
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label,
+.input-group textarea:focus + label,
+.input-group textarea:not(:placeholder-shown) + label{
+  top: -10px;
+  left: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: darkgreen;
+  
+  border-top: 4px solid #2d6a;
+  border-left: 2px solid #2d6a;
+  border-right: 2px solid #2d6a;
+}
+
+.input-group input:focus,
+.input-group textarea:focus{
+  border-color: var(--ink);
+  box-shadow: 0 0 0 4px var(--zest-light);
+}
+
+
+
+
+
+
+/* FEATURES - FIXED (yellowgreen border khatam) */
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:22px}
+.feature-card{background: #d8f8e0;border:1px solid var(--line);border-radius:16px;padding:20px;transition:.2s;box-shadow:0 2px 10px rgba(15,23,42,0.03)}
+.feature-card:hover{background: #2d6;  border-color:var(--zest);transform:translateY(-2px);box-shadow:0 10px 30px rgba(79,70,299,0.01)}
+.feature-icon{width:36px;height:36px;background:var(--ink);color:#fff;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:14px;margin-bottom:12px}
+.feature-card:nth-child(2) .feature-icon{background:var(--zest)}
+.feature-card h3{font-size:15px;margin-bottom:6px;color:var(--ink)}
+.feature-card p{font-size:13.5px;color:var(--muted);line-height:1.5}
+
+/* FAQ */
+.faq-item{border:1px solid var(--line);border-radius:14px;margin-bottom:10px;background: #d8f8e0;overflow:hidden;transition:.2s}
+.faq-item.active{background:#fff;border-color:#2d6}
+.faq-question{padding:16px 18px;display:flex;justify-content:space-between;font-weight:600;font-size:14px;cursor:pointer}
+.faq-question span{color:var(--zest);transition:.2s}
+.faq-item.active .faq-question span{transform:rotate(45deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:.3s;padding:0 18px;color:var(--muted);font-size:14px;line-height:1.6}
+.faq-item.active .faq-answer{max-height:200px;padding:0 18px 16px}
+
+/* ABOUT */
+.about-badge{display:inline-block;background:var(--ink);color:#fff;padding:6px 12px;border-radius:100px;font-size:10px;font-weight:700;letter-spacing:.5px;margin-bottom:14px}
+.about-heading{font-family:'sans Serif',serif;font-size:38px;line-height:1.1;letter-spacing:-1px}
+.about-desc{color:var(--zest);margin:14px 0 20px;line-height:1.7;font-size:15px}
+.about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0;padding:18px;background: #d8f8e0;border:1px solid #2d6;border-radius:16px;text-align:center}
+.stat-item h3{font-size:22px;font-weight:800}
+.stat-item p{font-size:12px;color:var(--zest);margin-top:2px}
+.tech-stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.tech-tag{padding:7px 12px;background: linear-gradient(#2d6e2c,#2d6e2d); color: whitesmoke;border:1px solid var(--line);border-radius:100px;font-size:12px;font-weight:500}
+.about-footer-note{margin-top:20px;color:var(--ink);font-size:12px}
+
+/* ALARM MODAL */
+.alarm-modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(15,23,42,0.35);backdrop-filter:blur(10px);align-items:center;justify-content:center}
+.alarm-modal.show{display:flex}
+.alarm-box{background: #fff;padding:28px;border-radius:18px;text-align:center;max-width:340px;width:90%;box-shadow:0 20px 60px rgba(0,0,0,0.2)}
+.stop-btn{margin-top:16px;width:100%;padding:12px;background:var(--zest);color:#fff;border:none;border-radius:12px;font-weight:600;cursor:pointer}
+
+footer, .footer{margin-top: auto;text-align:center;padding:30px 20px;color:var(--ink);font-size:12.5px;border-top:1px solid var(--line); width: 100%;
+position: relative;}
+@keyframes ringShake{0%,100%{transform:translateX(0)}25%{transform:translateX(-2px)}75%{transform:translateX(2px)}}
+@media(max-width:700px){.hero h1{font-size:42px}.task-form{grid-template-columns:1fr 1fr}.navbar{width:96%; top:10px; border-radius:14px}.container{padding:22px}}
+
+/*  REWARD  */
+
+/* ===== REWARD SECTION - FINAL FIX ===== */
+/* ===== REWARD PAGE - FINAL FIX - Tumhari class ke hisab se ===== */
+.reward-header {
+  background: linear-gradient(135deg, #2d6e2d, #2d6) ;
+  color: white ;
+  text-align: center;
+  padding: 40px 20px ;
+  border-radius: 20px ;
+  margin-bottom: 25px ;
+}
+
+.reward-header h1 {
+  font-size: 42px ;
+  font-weight: 800 ;
+  color: white ;
+  margin-bottom: 10px ;
+}
+
+.reward-header p {
+  font-size: 18px ;
+  color: #E2FFF1 ;
+}
+
+.reward-card {
+  background: white ;
+  border-radius: 20px ;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(15, 61, 58, 0.15) !important;
+  border: 2px solid #E2FFF1 !important;
+  text-align: center;
+}
+
+.wallet-big {
+  font-size: 48px ;
+  font-weight: 900 ;
+  color: #0F3D3A ;
+  background: #d8f8e0;
+  padding: 20px ;
+  border-radius: 15px ;
+  display: inline-block ;
+}
+.stats {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr ;
+  gap: 18px !important;
+  margin: 25px 0 ;
+}
+
+.stat-box {
+  background: linear-gradient(135deg, #d8f8e0, #d8f8e0) ;
+  border: 2px solid #14B8A6 !important;
+  border-radius: 16px ;
+  padding: 22px 15px ;
+  text-align: center ;
+  transition: 0.3s ;
+}
+
+.stat-box:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 8px 20px rgba(20, 184, 166, 0.2) !important;
+}
+
+.stat-box span {
+  display: block ;
+  font-size: 15px ;
+  color: #0F3D3A ;
+  font-weight: 600;
+  margin-bottom: 8px ;
+  opacity: 0.8;
+}
+
+.stat-box strong {
+  display: block ;
+  font-size: 28px ;
+  font-weight: 900 ;
+  color: #0F3D3A ;
+}
+
+#total-earned {
+  color: #2d6;
+}
+
+h3 {
+  color: #0F3D3A ;
+  font-size: 22px ;
+  font-weight: 800 ;
+  margin: 30px 0 15px 5px ;
+}
+
+#reward-history {
+  background: #d8f8e0 ;
+  border: 2px dashed #2d6 ;
+  border-radius: 14px ;
+  padding: 20px ;
+  min-height: 80px ;
+}
+
+.empty-text {
+  text-align: center ;
+  color: #2d6e2d ;
+  font-size: 16px ;
+  font-style: italic ;
+  padding: 15px ;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #2d6e2d, #2d6) ;
+  color: white ;
+  border: none ;
+  padding: 14px 28px ;
+  border-radius: 12px ;
+  font-weight: 700 ;
+  font-size: 16px ;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 25px;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  transform: scale(1.02) ;
+  box-shadow: 0 8px 20px rgba(15, 61, 58, 0.25) ;
+  background: #2d6e2d;
+}
+footer{
+  color: #2d6e2d;
+  background: #d8f8e0;
+  border: 1px solid #2d6e2d ;
+}
+
+/* Reward Word Continuous Animation */
+.reward-animate{
+  display: inline-block;
+  animation: moveReward 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes moveReward{
+  0%{
+    transform: translateY(0px) translateX(0px);
+  }
+  50%{
+    transform: translateY(-6px) translateX(5px);
+  }
+  100%{
+    transform: translateY(0px) translateX(-5px);
+  }
+}
+/* Navbar Buttons Continuous Wave Animation */
+.nav-links li, .nav-links a, .navbar button{
+  display: inline-block;
+  animation: navFloat 1.5s ease-in-out infinite alternate;
+}
+
+/* Har button thodi der baad hilega - wave effect*/ 
+.nav-links li:nth-child(1), .nav-links a:nth-child(1){ animation-delay: 0s; }
+.nav-links li:nth-child(2), .nav-links a:nth-child(2){ animation-delay: 0.2s; }
+.nav-links li:nth-child(3), .nav-links a:nth-child(3){ animation-delay: 0.4s; }
+.nav-links li:nth-child(4), .nav-links a:nth-child(4){ animation-delay: 0.6s; }
+.nav-links li:nth-child(5), .nav-links a:nth-child(5){ animation-delay: 0.8s; }
+.nav-links li:nth-child(6), .nav-links a:nth-child(6){ animation-delay: 1s; }
+.nav-links li:nth-child(7), .nav-links a:nth-child(7){ animation-delay: 1.2s; }
+
+@keyframes navFloat{
+  0%{
+    transform: translateY(0px);
+  }
+  100%{
+    transform: translateY(5px);
+  }
+}
+
+/* Go to App Button - Continuous Animation */
+/* Sirf Go to App button uchele - Add Task wala nahi*/ 
+
+
+/* Filter Buttons - Pyara Hover Uthne Wala Effect */
+.filter-btn{
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  cursor: pointer;
+}
+
+.filter-btn:hover{
+  transform: translateY(5px) scale(1.05) !important;
+  box-shadow: 0 8px 20px rgba(45, 106, 63, 0.25) !important;
+  background-color: #2d6a3f !important;
+  color: white !important;
+}
+
+/* Jo active hai uske liye halka sa aur effect */
+.filter-btn.active{
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(45, 106, 63, 0.2);
+}
+
+/* Add Task Button - Full Width Green */
+.btn-primary, button[type="submit"]{
+  width: 100% !important;
+  background: #2d6a3f !important;
+  color: white !important;
+  border-radius: 30px !important;
+  padding: 14px !important;
+  border: none !important;
+  animation: taskBounce 1.5s ease-in-out infinite alternate !important;
+}
+@keyframes taskBounce{
+  0%{ transform: translateY(0px); }
+  100%{ transform: translateY(-5px); box-shadow: 0 10px 20px rgba(45,106,63,0.3); }
+}
+
+
+/* Enable Alarm Sound Button - Chota Pyara Button */
+#enable-sound, .btn-sound{
+  width: auto !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px;
+  padding: 8px 16px !important;
+  margin-top: 25px !important;
+  background: #eaf6ec !important;
+  border: 2px solid #2d6a3f !important;
+  color: #2d6a3f !important;
+  border-radius: 20px !important;
+  font-size: 14px !important;
+  cursor: pointer;
+  animation: soundPulse 1.2s ease-in-out infinite alternate !important;
+  box-shadow: none !important;
+  outline: none !important;
+  height: 60%;
+}
+@keyframes soundPulse{
+  0%{ transform: scale(1); }
+  100%{ transform: scale(1.05); background: #d4edda !important; }
+}
+
+#enable-sound:hover{
+  background: #2d6a3f !important;
+  color: white !important;
+}
+
+/* All / Active / Completed - Upar Uthne Wala Effect */
+.filter-btn{
+  transition: all 0.3s ease !important;
+  cursor: pointer !important;
+}
+.filter-btn:hover{
+  transform: translateY(-5px) scale(1.05) !important;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15) !important;
+}
+
+/* Mobile pe zyada pyara lagega */
+@media (max-width: 480px){
+  .btn-primary, button[type="submit"]{
+    padding: 12px !important;
+    font-size: 15px !important;
+  }
+  #enable-sound{
+    font-size: 12px !important;
+    padding: 6px 12px !important;
+  }
+  .filter-group{
+    gap: 6px !important;
+  }
+  .filter-btn{
+    padding: 6px 12px !important;
+    font-size: 13px !important;
+  }
+}

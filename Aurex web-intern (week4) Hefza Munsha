@@ -1,0 +1,181 @@
+WEEK 4 FINAL SUBMISSION
+Task Manager Application
+Aurex Web Development Internship
+
+Intern Name: Hefza Munsha
+Submission Date: 26 September 2026
+
+
+1. SUBMISSION LINKS
+
+GitHub Repository:
+https://github.com/Hefza-Munsha55/todo-app
+
+Live Deployment Link:
+https://Hefza-Munsha55.github.io/todo-app/
+
+Project Demo:
+Screenshots are attached in Section 6.
+Video demo link: [Recording]
+Demo link: https://drive.google.com/file/d/11DzFDXZ5VrpSGViTSeop1bZ6xIy5ja-L/view?usp=drive_link
+
+2. SHORT PROJECT EXPLANATION AND LEARNING SUMMARY
+
+Project Overview:
+Task Manager is a modern, responsive, client-side
+productivity application built with Vanilla JavaScript.
+It allows users to manage daily tasks without backend.
+
+Purpose:
+To implement complete CRUD functionality and
+understand real-world state management.
+
+Technology Stack:
+- HTML5 for structure
+- CSS3 with Flexbox and Grid for layout
+- JavaScript ES6+ for logic
+- LocalStorage API for persistence
+
+Core Workflow:
+User Input -> Form Validation -> Task Object Creation
+-> Array Update -> LocalStorage Sync -> DOM Render
+
+Learning Summary:
+- Learned real DOM manipulation and dynamic rendering
+- Learned to manage application state using arrays and objects
+- Learned to handle data persistence with LocalStorage
+- Learned to fix footer overlap using flexbox layout
+- Learned clean Git workflow and GitHub Pages deployment
+- Moved from just working code to clean and maintainable code
+
+3. LIST OF COMPLETED JAVASCRIPT EXERCISES
+
+All JavaScript fundamentals are implemented inside the
+Task Manager project itself.
+
+a) Variables:
+   const tasks = []
+   let currentFilter = 'all'
+   const taskInput = document.getElementById('taskInput')
+
+b) Conditions:
+   if (taskInput.value.trim() === "")
+   if (task.completed === true)
+   if (filter === 'completed')
+
+c) Loops:
+   tasks.forEach(task => renderTask(task))
+   for (let i = 0; i < tasks.length; i++)
+
+d) Functions:
+   function addTask()
+   function deleteTask(id)
+   function editTask(id)
+   function toggleComplete(id)
+   const saveToStorage = () => {}
+   const renderTasks = () => {}
+
+e) Arrays:
+   tasks.push(newTask)
+   tasks.splice(index, 1)
+   tasks.filter(task => !task.completed)
+   tasks.map(task => updatedTask)
+
+f) Objects:
+   Task Structure = {
+     id: Date.now(),
+     text: "Learn JavaScript",
+     completed: false,
+     createdAt: new Date()
+   }
+
+All concepts are linked and working together.
+
+4. TASK MANAGER FUNCTIONALITY - WORKING STATUS
+
+Add Task - Working with validation
+Edit Task - Working with inline update
+Delete Task - Working with confirmation
+Mark as Complete - Working with strikethrough style
+Filtering - All, Active, Completed - Working
+Form Validation - Empty input blocked - Working
+LocalStorage - Data persists after refresh - Working
+Responsive Design - Works on desktop and mobile - Working
+
+5. DIFFICULTIES OR BLOCKERS ENCOUNTERED
+
+Blocker 1: LocalStorage Sync Issue
+Problem: After edit or delete, old data appeared after refresh.
+Reason: Array and LocalStorage were not in sync.
+Solution: Created single function syncAndRender().
+This function first updates array, then saves to storage,
+then renders UI. This is modern state pattern.
+
+Blocker 2: Dynamic Buttons Not Working
+Problem: Edit and Delete buttons created by JavaScript
+were not responding to clicks.
+Solution: Used ID-based pattern with onclick="deleteTask(id)"
+and used array filter method to find correct task.
+
+Blocker 3: Footer Overlapping on Mobile
+Problem: Footer was overlapping content on FAQ page.
+Solution: Applied modern flex layout:
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main {
+  flex: 1;
+}
+
+Blocker 4: GitHub Live Not Updating
+Problem: Changes were not visible on live link.
+Solution: Learned correct git flow:
+git add . -> git commit -> git push
+and used Ctrl + F5 for hard refresh.
+
+Final Learning: Improved from code that just works
+to efficient and professional code.
+
+6. PROJECT SCREENSHOTS - PROOF OF WORKING:
+
+Desktop View - Home Page, Task functionality, Features, Rewards (screenshots)
+Image Path: ./screenshots/home.png
+
+![Home Page](./screenshots/Screenshot%20(25).png)
+
+![Add Task](./screenshots/Screenshot%20(26).png)
+
+![Edit Delete](./screenshots/Screenshot%20(27).png)
+
+Fully Responsive Mobile View - WhatsApp
+![Mobile](./screenshots/WhatsApp%20Image%202026-09-26%20at%202.56.29%20PM.jpeg)
+
+![Mobile2](./screenshots/WhatsApp%20Image%202026-09-26%20at%202.56.30%20PM%20(1).jpeg)
+
+
+7. PROGRESS EVALUATION BREAKDOWN - 100% COVERED
+
+Evaluation Category: JavaScript Fundamentals and Logic - 20%
+Status: Covered - variables, conditions, loops, functions,
+arrays, objects all used correctly.
+
+Evaluation Category: DOM Manipulation and Event Handling - 20%
+Status: Covered - correct element selection, dynamic UI
+updates, working event listeners.
+
+Evaluation Category: Task Manager Functionality - 20%
+Status: Covered - add, edit, delete, complete, filter
+all working correctly.
+
+Evaluation Category: Form Validation and LocalStorage - 20%
+Status: Covered - input validation working, data saves,
+retrieves, updates and persists after refresh.
+
+Evaluation Category: Code Quality, GitHub and Documentation - 20%
+Status: Covered - readable code, meaningful naming,
+organized files, meaningful commits, clear documentation.
+
+END OF SUBMISSION
+Thank you!
